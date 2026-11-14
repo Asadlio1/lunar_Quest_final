@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lunar Quest – Astronaut Training &amp; Lunar Exploration Simulator</title>
+<meta name="description" content="An independent educational simulation: explore a lunar outpost and learn how its systems work.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#outpost">Skip to the lunar base</a>
+<header class="nav">
+  <a class="brand" href="#hero">LUNAR QUEST</a>
+  <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navLinks">Menu</button>
+  <nav id="navLinks" aria-label="Main">
+    <a href="#hero">Mission</a><a href="#outpost">Lunar base</a><a href="#academy">Academy</a><a href="#challenges">Challenges</a><a href="#progress">Progress</a>
+  </nav>
+</header>
+<main>
+<section id="hero" class="hero">
+  <div class="wrap">
+    <h1>BECOME AN ASTRONAUT.<br>PREPARE FOR THE UNKNOWN.</h1>
+    <p>Explore a simulated lunar outpost, learn how each system keeps a crew alive, and test what you know.</p>
+    <div class="actions">
+      <a class="btn amber" href="#outpost">START YOUR TRAINING</a>
+      <a class="btn" href="#outpost">EXPLORE THE LUNAR BASE</a>
+    </div>
+    <ul class="status" aria-label="Training status">
+      <li><span>Mission status</span><b>Simulation active</b></li>
+      <li><span>Objects explored</span><b id="heroExplored">0 / 10</b></li>
+      <li><span>Training progress</span><b id="heroProgress">0%</b></li>
+    </ul>
+    <p class="note" id="firstTime">First time? Hover or tap a glowing marker on the lunar base, read the panel, then answer its knowledge check.</p>
+  </div>
+</section>
+
+<section id="outpost" class="wrap section" aria-labelledby="outpostTitle">
+  <h2 id="outpostTitle">Interactive lunar outpost</h2>
+  <p class="lead">Ten systems, one base. Select a marker or pick from the list below. On a phone, swipe the scene sideways.</p>
+  <div class="scene-scroll"><div class="scene" id="scene"></div></div>
+  <ul class="obj-list" id="objList" aria-label="All outpost systems"></ul>
+</section>
+
+<section id="academy" class="wrap section" aria-labelledby="acTitle">
+  <h2 id="acTitle">Astronaut training academy</h2>
+  <p class="lead">Six modules. Open one, read the lesson, try the activity, then answer the knowledge check.</p>
+  <div class="cards" id="modules"></div>
+</section>
+
+<section id="challenges" class="wrap section" aria-labelledby="chTitle">
+  <h2 id="chTitle">Mission challenges</h2>
+  <p class="lead">Simulated scenarios. Pick a response, see the consequence, and compare with the best response. You can try other choices.</p>
+  <div class="cards" id="challengeList"></div>
+</section>
+
+<section id="progress" class="wrap section" aria-labelledby="progTitle">
+  <h2 id="progTitle">Training progress</h2>
+  <div class="dash">
+    <div class="stat"><span>Objects explored</span><b id="pExplored">0 / 10</b></div>
+    <div class="stat"><span>Knowledge checks correct</span><b id="pQuiz">0 / 10</b></div>
+    <div class="stat"><span>Modules completed</span><b id="pMods">0 / 6</b></div>
+    <div class="stat"><span>Module quiz score</span><b id="pModScore">0 / 12</b></div>
+    <div class="stat"><span>Challenges completed</span><b id="pChal">0 / 6</b></div>
+    <div class="stat"><span>Simulation readiness</span><b id="pReady">0%</b>
+      <div class="bar"><i id="pBar"></i></div></div>
+  </div>
+  <p class="note">Readiness here is a simple training score (equal parts: systems explored, system knowledge checks, modules completed, and challenge points). It is not a real certification.</p>
+  <button class="btn" id="resetBtn">Reset progress</button>
+</section>
+</main>
+
+<footer class="foot"><p>Lunar Quest is an independent educational simulation. It is not an official NASA product or a certified astronaut-training system. Scenarios and mission details are simulated.</p></footer>
+
+<aside class="panel" id="panel" role="dialog" aria-labelledby="pTitle" aria-hidden="true" tabindex="-1" hidden></aside>
+
+<script src="data.js"></script>
+<script src="progress.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
